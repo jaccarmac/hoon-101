@@ -1,0 +1,17 @@
+;; guix environment --pure -m "build-urbit-manifest.scm"
+(specifications->manifest
+ '("bash"
+   "coreutils"
+   "gcc-toolchain"
+   "git"
+   "curl"
+   "gmp"
+   "ncurses"
+   "libsigsegv"
+   "pkg-config"
+   "openssl"
+   "python2"
+   "python"
+   "zlib"
+   "meson"
+   "ninja"))
