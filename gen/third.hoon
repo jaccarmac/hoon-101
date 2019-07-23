@@ -1,0 +1,1 @@
+:: Build a naked generator that accepts a list as its argument, and returns the third element of that list. Do not use any standard-library functions. Lists are kinds of nouns that are written as [1 2 3 4 ~].
