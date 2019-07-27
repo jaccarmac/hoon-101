@@ -1,9 +1,18 @@
-:: Hoon 101: Assignment 3a. Comment each line of code to tell the reader what the code is doing.
-:: Comments should be written as "breathing comments" as suggested in the Hoon Style Guide: https://urbit.org/docs/learn/hoon/style/
-
+::  $n: number to calculate the factorial of
+::
 |=  n=@ud
+::  $t: accumulator: used repeatedly in multiplication
+::
 =/  t=@ud  1
+::  create a recursion point $ closing over t, then call it
+::
 |-
+::  if we're calculating the factorial of 1
+::
 ?:  =(n 1)
+    ::  then just return the accumulated value
+    ::
     t
+::  else calculate a smaller factorial after multiplying n and t
+::
 $(n (dec n), t (mul t n))
