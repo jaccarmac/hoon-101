@@ -12,7 +12,7 @@
 ?@  l
   ::  then there's no third element
   ::
-  ~
+  !!
 ::  else if we're deep enough in
 ::
 ?:  =(3 c)
