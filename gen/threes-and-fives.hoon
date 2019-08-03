@@ -3,10 +3,9 @@
 |=  n=@ud
 ^-  @ud
 ::  $m: number which goes from 1 to n
-::
-=/  m=@ud  1
 ::  $total: running total of the sum of multiples
 ::
+=/  m=@ud      1
 =/  total=@ud  0
 |-
 ?:  =(n m)
