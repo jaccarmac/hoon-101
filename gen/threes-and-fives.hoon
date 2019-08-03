@@ -10,6 +10,8 @@
 |-
 ?:  =(n m)
   total
-?:  |(=(0 (mod m 3)) =(0 (mod m 5)))
-  $(total (add total m), m +(m))
-$(m +(m))
+=/  newtotal=@ud
+  ?:  |(=(0 (mod m 3)) =(0 (mod m 5)))
+    (add total m)
+  total
+$(total newtotal, m +(m))
