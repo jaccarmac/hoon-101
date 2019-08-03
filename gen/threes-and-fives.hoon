@@ -10,6 +10,8 @@
 |-
 ?:  =(n m)
   total
+::  $newtotal: total with m added if it is divisible by 3 or 5
+::
 =/  newtotal=@ud
   ?:  |(=(0 (mod m 3)) =(0 (mod m 5)))
     (add total m)
