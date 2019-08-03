@@ -9,13 +9,13 @@
   ::  $upto: number up to which to sum
   ::
   |=  [n=@ud upto=@ud]
-    ^-  @ud
-    ::  $sums-necessary: upper bound for the sum below
-    ::
-    =/  sums-necessary=@ud  (div upto n)
-    ::  sum(k=1 to n) of k == (1/2) * n * (n + 1)
-    ::
-    (mul n (div (mul sums-necessary +(sums-necessary)) 2))
+  ^-  @ud
+  ::  $sums-necessary: upper bound for the sum below
+  ::
+  =/  sums-necessary=@ud  (div upto n)
+  ::  sum(k=1 to n) of k == (1/2) * n * (n + 1)
+  ::
+  (mul n (div (mul sums-necessary +(sums-necessary)) 2))
 ::  $threes: sum of multiples of 3 below n
 ::  $fives: sum of multiples of 5 below n
 ::  $fifteens: sum of multiples of 15 below n
