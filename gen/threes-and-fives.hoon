@@ -2,18 +2,26 @@
 ::
 |=  n=@ud
 ^-  @ud
-::  $m: number which goes from 1 to n
-::  $total: running total of the sum of multiples
+::  $sum-multiples-below: sum of multiples below a given number
 ::
-=/  m=@ud      1
-=/  total=@ud  0
-|-
-?:  =(n m)
-  total
-::  $newtotal: total with m added if it is divisible by 3 or 5
-::
-=/  newtotal=@ud
-  ?:  |(=(0 (mod m 3)) =(0 (mod m 5)))
-    (add total m)
-  total
-$(total newtotal, m +(m))
+=/  sum-multiples-below
+  ::  $n: number whose multiples to sum
+  ::  $below: number below which to sum
+  ::
+  |=  [n=@ud below=@ud]
+    ::  $m: number currently being added
+    ::  $total: running total
+    ::
+    =/  m=@ud      n
+    =/  total=@ud  0
+    |-
+    ?:  (lte below m)
+      total
+    $(m (add m n), total (add total m))
+::  $threes: sum of multiples of 3 below n
+::  $fives: sum of multiples of 5 below n
+::  $fifteens: sum of multiples of 15 below n
+=/  threes    (sum-multiples-below 3 n)
+=/  fives     (sum-multiples-below 5 n)
+=/  fifteens  (sum-multiples-below 15 n)
+(sub (add threes fives) fifteens)
