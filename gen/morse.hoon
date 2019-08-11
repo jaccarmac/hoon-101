@@ -1,3 +1,6 @@
+::  TODO: turn into a morse code converter
+::
+
 ::  the comment "::  code belongs here" indicates that one or more lines of code are needed to make this section of the program work.
 
 |=  raw=tape
@@ -7,8 +10,8 @@
 ++  convert
   ::  code belongs here
   ::  (~(got by a) b) produces the value located at key b within map a
-  =/  chart ~(got by table)                             
-  ::  code belongs here 
+  =/  chart ~(got by table)
+  ::  code belongs here
 ++  table
   %-  my
   :~  :-  'A'  '.-'

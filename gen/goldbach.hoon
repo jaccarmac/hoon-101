@@ -1,3 +1,5 @@
+::  TODO: comment each line
+::
 |=  n=@
 =<  (goldbach n)
 |%
