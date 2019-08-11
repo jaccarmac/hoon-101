@@ -87,6 +87,6 @@
   ::  else increment i and decrement j and try those components
   ::
   $(i +(i), j (dec j))
-  ::  end the core
-  ::
+::  end the core
+::
 --
