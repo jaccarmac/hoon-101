@@ -1,17 +1,60 @@
-::  TODO: turn into a morse code converter
+::  $raw: a message to translate
 ::
-
-::  the comment "::  code belongs here" indicates that one or more lines of code are needed to make this section of the program work.
-
 |=  raw=tape
-=<
-  ::  code belongs here
+=<  (convert raw)
 |%
+::  $convert: convert a message into morse code
+::
 ++  convert
-  ::  code belongs here
-  ::  (~(got by a) b) produces the value located at key b within map a
-  =/  chart ~(got by table)
-  ::  code belongs here
+  ::  $msg: the message to convert
+  ::
+  |=  msg=tape
+  ^-  tape
+  ::  $chart: to pull translations by key
+  ::
+  =/  chart  ~(got by table)
+  (spacify (turn (clean msg) chart))
+::  $spacify: add spaces between elements of a tape
+::
+++  spacify
+  ::  $in: input tape
+  ::
+  |=  in=tape
+  ^-  tape
+  ::  $out: tape with spaces between elements of in
+  ::
+  =/  out=tape  ""
+  |-  ^-  tape
+  ?:  ?=(~ in)
+    ?:  ?=(~ out)
+      out
+    ::  $s: out with the last element trimmed off
+    ::
+    =/  s  (trim (dec (lent out)) out)
+    p.s
+  $(out (weld out ~[i.in ' ']), in t.in)
+::  $clean: clean up a tape for morse code translation
+::
+++  clean
+  ::  $in: input tape
+  ::
+  |=  in=tape
+  ^-  tape
+  =.  in  (cuss in)
+  ::  $key-exists: to check key existence
+  ::  $out: output tape with existing key chars
+  ::
+  =/  key-exists    ~(has by table)
+  =/  out=tape      ""
+  |-  ^-  tape
+  ?:  ?=(~ in)
+    out
+  ::  $new-out:  tape with next char if it exists in table
+  ::
+  =/  new-out=tape  ?:((key-exists i.in) (weld out ~[i.in]) out)
+  $(out new-out, in t.in)
+::  $table: morse code translation table
+::
 ++  table
   %-  my
   :~  :-  'A'  '.-'
