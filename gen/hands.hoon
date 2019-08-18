@@ -1,5 +1,4 @@
-::  todo: take $x and $y (both @ud), produce a list of x lists (hands) of y
-::  distinct cards from a standard 52 card deck. should be a %say generator
+::  x hands of y distinct cards
 :-  %say
 |=  [[* eny=@uvJ *] [x=@ud y=@ud ~] ~]
 :-  %noun
@@ -7,12 +6,60 @@
 =<  ?:  (gth (mul x y) 52)
       ~|  %not-enough-cards-in-deck
       !!
-    ~[~['hand' 'one' '♣'] ~['hand' 'two' '♣']]
+    ~[deck]
 |%
 ++  deck
-  :~  '♠'
-      '♥'
-      '♦'
-      '♣'
+  :~  'A♠'
+      '2♠'
+      '3♠'
+      '4♠'
+      '5♠'
+      '6♠'
+      '7♠'
+      '8♠'
+      '9♠'
+      '10♠'
+      'J♠'
+      'Q♠'
+      'K♠'
+      'A♥'
+      '2♥'
+      '3♥'
+      '4♥'
+      '5♥'
+      '6♥'
+      '7♥'
+      '8♥'
+      '9♥'
+      '10♥'
+      'J♥'
+      'Q♥'
+      'K♥'
+      'A♦'
+      '2♦'
+      '3♦'
+      '4♦'
+      '5♦'
+      '6♦'
+      '7♦'
+      '8♦'
+      '9♦'
+      '10♦'
+      'J♦'
+      'Q♦'
+      'K♦'
+      'A♣'
+      '2♣'
+      '3♣'
+      '4♣'
+      '5♣'
+      '6♣'
+      '7♣'
+      '8♣'
+      '9♣'
+      '10♣'
+      'J♣'
+      'Q♣'
+      'K♣'
   ==
 --
