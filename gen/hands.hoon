@@ -19,10 +19,10 @@
     ::  $c: a card
     ::
     (turn suits |=(s=@t (turn cards |=(c=@t (crip (weld (trip c) (trip s)))))))
-    ::  $p: the next element from the list of lists above
-    ::  $q: the accumulator list
-    ::
-    |=([p=(list @t) q=(list @t)] (weld p q))
+  ::  $p: the next element from the list of lists above
+  ::  $q: the accumulator list
+  ::
+  |=([p=(list @t) q=(list @t)] (weld p q))
 ::  $suits: the suits of a standard deck of cards
 ::
 ++  suits
