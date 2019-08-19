@@ -28,13 +28,12 @@
   =/  hands=(list (list @t))  (reap p ~)
   =/  idxs=(list @ud)         (gulf 0 (dec p))
   |-  ^-  (list (list @t))
-  ?:  ?=(~ deck)
+  ?:  (lth (lent deck) p)
     hands
   ::  $i: index of card and hand to combine
   ::
   =.  hands  (turn idxs |=(i=@ud (snoc (snag i hands) (snag i deck))))
-  =.  deck   (slag +(p) deck)
-  $
+  $(deck (slag p deck))
 ::  $shuffled-deck: a deck of cards shuffled using fisher-yates
 ::
 ++  shuffled-deck
