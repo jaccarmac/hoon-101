@@ -15,17 +15,10 @@
 ::
 ++  deck
   %+  reel
-    %+  turn
-      suits
-      ::  $s: a suit
-      ::
-      |=  s=@t
-        %+  turn
-          cards
-          ::  $c: a card
-          ::
-          |=  c=@t
-          (crip (weld (trip c) (trip s)))
+    ::  $s: a suit
+    ::  $c: a card
+    ::
+    (turn suits |=(s=@t (turn cards |=(c=@t (crip (weld (trip c) (trip s)))))))
     ::  $p: the next element from the list of lists above
     ::  $q: the accumulator list
     ::
